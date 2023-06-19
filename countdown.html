@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Clock</title>
+  <style>
+    /* Add some basic styling to the countdown clock */
+    .countdown {
+      font-size: 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="countdown" id="countdown"></div>
+
+  <script>
+    <script>
+  // Set the target date and time for the countdown
+  var targetDate = new Date("2023-06-28T23:59:59");
+
+  // Update the countdown every second
+  setInterval(function() {
+    // Get the current date and time
+    var currentDate = new Date();
+
+    // Calculate the remaining time in seconds
+    var remainingTime = Math.floor((targetDate - currentDate) / 1000);
+
+    // Calculate the remaining days, hours, minutes, and seconds
+    var days = Math.floor(remainingTime / 86400);
+    var hours = Math.floor((remainingTime % 86400) / 3600);
+    var minutes = Math.floor((remainingTime % 3600) / 60);
+    var seconds = remainingTime % 60;
+
+    // Display the countdown in the HTML element
+    document.getElementById("countdown").innerHTML = "Countdown: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+  }, 1000);
+</script>
+
+  </script>
+</body>
+</html>
